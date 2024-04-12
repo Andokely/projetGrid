@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <div className='flex justify-center items-center h-screen'>
-        <div className='bg-red-300 rounded-lg p-5 items-center w-full'>
+        <div className='bg-green-300 rounded-lg p-5 items-center w-full'>
           <h1 className='uppercase font-bold'>Hello world be zany ry baina aaaa</h1>
         </div>
       </div>
