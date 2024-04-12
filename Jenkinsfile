@@ -2,27 +2,26 @@ pipeline {
     agent any
     
     stages {
-        stage('Pull sfsdfdsf') {
+        stage('Pull') {
             steps {
-                sh 'cd projetGrid && git pull'
+                sh 'git pull origin main'
             }
         }
         stage('Build') {
             steps {
-                sh 'cd projetGrid && docker build -t imageGrid .'
+                sh 'docker build -t imagegrid .'
             }
         }
         stage('Push') {
             steps {
-                sh 'cd projetGrid && docker login -u andokely -p ait8lac9*'
-                sh 'cd projetGrid && docker push andokely/react'
+                sh 'docker login -u andokely -p ait8lac9*'
+                sh 'docker push andokely/imagegrid'
             }
         }
         stage('Deploy') {
-            steps {
-                withKubeConfig([credentialsId: '1', serverUrl: 'https://cluster-url']) {
-                    sh 'cd projetGrid && kubectl apply -f deployment.yaml --validate=false'
-                    sh 'cd projetGrid && kubectl apply -f service.yaml --validate=false'
+           steps {
+                withKubeConfig([credentialsId: '2', serverUrl: 'https://192.168.49.2:8443']) {
+                    sh 'kubectl apply -f deployment.yaml --validate=false'
                 }
             }
         }
