@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: react-app-container
-          image: andokely/react
+          image: andokely/imagegrid
           ports:
             - containerPort: 5173
 
