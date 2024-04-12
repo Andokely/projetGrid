@@ -9,20 +9,20 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'cd projetGrid && docker build -t imageGrid .'
+                sh 'cd projetGrid && docker build -t imageGrid .'
             }
         }
         stage('Push') {
             steps {
-                bat 'cd projetGrid && docker login -u andokely -p ait8lac9*'
-                bat 'cd projetGrid && docker push andokely/react'
+                sh 'cd projetGrid && docker login -u andokely -p ait8lac9*'
+                sh 'cd projetGrid && docker push andokely/react'
             }
         }
         stage('Deploy') {
             steps {
                 withKubeConfig([credentialsId: '1', serverUrl: 'https://cluster-url']) {
-                    bat 'cd projetGrid && kubectl apply -f deployment.yaml --validate=false'
-                    bat 'cd projetGrid && kubectl apply -f service.yaml --validate=false'
+                    sh 'cd projetGrid && kubectl apply -f deployment.yaml --validate=false'
+                    sh 'cd projetGrid && kubectl apply -f service.yaml --validate=false'
                 }
             }
         }
