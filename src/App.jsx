@@ -10,7 +10,7 @@ function App() {
     <>
       <div className='flex justify-center items-center h-screen'>
         <div className='bg-red-300 rounded-lg p-5 items-center w-full'>
-          <h1 className='uppercase font-bold'>Hello world be zany eeee</h1>
+          <h1 className='uppercase font-bold'>Hello world be zany ry baina aaaa</h1>
         </div>
       </div>
     </>
