@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Pull') {
             steps {
-                sh 'cd projetGrid && git pull'
+                sh 'git pull'
             }
         }
         stage('Build') {
