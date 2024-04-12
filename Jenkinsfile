@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     stages {
-        stage('Pull') {
+        stage('Pull be ty') {
             steps {
                 sh 'cd projetGrid && git pull'
             }
