@@ -38,7 +38,7 @@ export const App = () => {
               type="submit"
               className="px-4 py-2 text-white bg-red-600 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
             >
-              Login
+              XXXXXXX
             </button>
           </form>
         </div>
